@@ -18,3 +18,5 @@
     - 이를 검사하지 않을 경우 무한루프에 빠질 위험이 있음
  
 #### <깊이 우선 탐색(DFS)의 과정>
+![깊이 우선 탐색 과정](https://user-images.githubusercontent.com/68328998/129710000-ed8c4dbd-c86b-4144-a81c-4a50b4e59d20.PNG)
+
