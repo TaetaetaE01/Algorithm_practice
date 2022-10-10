@@ -1,33 +1,24 @@
 package Silver;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Silver_1427 {
-	public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		Scanner sc = new Scanner(System.in);
-		long A = sc.nextLong();
-		long B = sc.nextLong();
-		sc.close();
+        int[] counting = new int[10];
+        String input = br.readLine();
 
-		long gcd = getGCD(Math.max(A, B), Math.min(A, B));
-		long lcm = getLCM(A, B, gcd);
+        for (int i = 0; i < input.length(); i++) {
+            counting[input.charAt(i) - '0']++;
+        }
 
-		System.out.println(gcd);
-		System.out.println(lcm);
-	}
-
-	public static long getGCD(long A, long B) {
-		while (B > 0) {
-			long t = A;
-			A = B;
-			B = t % B;
-		}
-		return A;
-	}
-
-	public static long getLCM(long A, long B, long gcd) {
-
-		return (A * B) / gcd;
-	}
+        for (int i = 9; i >= 0; i--) {
+            while (counting[i]-- > 0) {
+                System.out.print(i);
+            }
+        }
+    }
 }
