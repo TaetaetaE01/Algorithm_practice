@@ -14,6 +14,7 @@ public class Silver_11004 {
         int k = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
+
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
@@ -22,7 +23,7 @@ public class Silver_11004 {
         System.out.println(arr[k - 1]);
     }
 
-    private static void quickSort(int[] arr, int start, int end, int k) {
+    public static void quickSort(int[] arr, int start, int end, int k) {
         if (start < end) {
             int pivot = partition(arr, start, end);
             if (pivot == k) {
@@ -35,7 +36,7 @@ public class Silver_11004 {
         }
     }
 
-    private static int partition(int[] arr, int start, int end) {
+    public static int partition(int[] arr, int start, int end) {
         if (start + 1 == end) {
             if (arr[start] > arr[end]) {
                 swap(arr, start, end);
@@ -44,7 +45,7 @@ public class Silver_11004 {
         }
 
         int middle = (start + end) / 2;
-        swap(arr, start, end);
+        swap(arr, start, middle);
         int pivot = arr[start];
         int i = start + 1;
         int j = end;
@@ -61,7 +62,7 @@ public class Silver_11004 {
             }
         }
         arr[start] = arr[j];
-        arr[i] = arr[j];
+        arr[j] = pivot;
         return j;
     }
 
