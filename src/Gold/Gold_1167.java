@@ -14,7 +14,7 @@ import java.util.*;
 public class Gold_1167 {
 
     static boolean visited[];
-    static int[] distanc;
+    static int[] distance;
     static ArrayList<Edge>[] A;
 
     public static void main(String[] args) throws IOException {
@@ -40,21 +40,21 @@ public class Gold_1167 {
             }
         }
 
-        distanc = new int[N + 1];
+        distance = new int[N + 1];
         visited = new boolean[N + 1];
         BFS(1);
         int Max = 1;
 
         for (int i = 2; i <= N; i++) {
-            if (distanc[Max] < distanc[i]) {
+            if (distance[Max] < distance[i]) {
                 Max = i;
             }
         }
-        distanc = new int[N + 1];
+        distance = new int[N + 1];
         visited = new boolean[N + 1];
         BFS(Max);
-        Arrays.sort(distanc);
-        System.out.println(distanc[N]);
+        Arrays.sort(distance);
+        System.out.println(distance[N]);
     }
 
     private static void BFS(int NodeIndex) {
@@ -72,7 +72,7 @@ public class Gold_1167 {
                 if (!visited[e]) {
                     visited[e] = true;
                     queue.add(e);
-                    distanc[e] = distanc[is_NowNode] + v;
+                    distance[e] = distance[is_NowNode] + v;
                 }
             }
         }
