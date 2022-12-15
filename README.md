@@ -1,4 +1,7 @@
 # Algorithm
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=grgr589)](https://solved.ac/grgr589)
+
 
 - 자료구조
     - 스택과 큐
